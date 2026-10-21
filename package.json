@@ -1,0 +1,12 @@
+{
+  "name": "example-percy-sdet-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lumina Home — a small static storefront used as the app under test by percy/example-percy-sdet-suite",
+  "scripts": {
+    "serve": "http-server -p 5500 --silent"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
