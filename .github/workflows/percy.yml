@@ -1,0 +1,19 @@
+name: Percy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Snapshots every .html page in the repo root (static site, no build step).
+      - run: npx -y @percy/cli@1.32 snapshot . --config .percy.yml
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
